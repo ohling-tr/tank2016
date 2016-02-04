@@ -13,6 +13,8 @@ package org.usfirst.frc4662.Tank2016.subsystems;
 
 import org.usfirst.frc4662.Tank2016.RobotMap;
 import org.usfirst.frc4662.Tank2016.commands.*;
+
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -52,5 +54,9 @@ public class Drive extends Subsystem {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
     }
+    
+    public void tankDrive(Joystick drive1, Joystick drive2){
+    	RobotMap.driveRobotDrive41.tankDrive(drive1.getY(), drive2.getY());
+    	    }
 }
 
