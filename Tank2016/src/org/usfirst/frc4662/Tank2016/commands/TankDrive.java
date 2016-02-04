@@ -13,6 +13,7 @@ package org.usfirst.frc4662.Tank2016.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4662.Tank2016.Robot;
+import org.usfirst.frc4662.Tank2016.subsystems.Drive;
 
 /**
  *
@@ -43,6 +44,7 @@ public class TankDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	//drive method goes here with joysticks from default
+    	Robot.drive.tankDrive(Robot.oi.joystick1, Robot.oi.joystick2);
     }
 
     // Make this return true when this Command no longer needs to run execute()
