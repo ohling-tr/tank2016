@@ -11,6 +11,8 @@
 
 package org.usfirst.frc4662.Tank2016.subsystems;
 
+import java.util.Comparator;
+
 //import org.usfirst.frc4662.Tank2016.RobotMap;
 //import org.usfirst.frc4662.Tank2016.commands.*;
 
@@ -239,7 +241,36 @@ public class VisionByte extends Subsystem {
         return m_frame;
     }
     
-// need toggle cameras to display - or can this???  NO this is a camera.
-// need target calculations
+// targeting code
+	   public class ParticleReport implements Comparator<ParticleReport>, Comparable<ParticleReport>{
+			double PercentAreaToImageArea;
+			double Area;
+			double BoundingRectLeft;
+			double BoundingRectTop;
+			double BoundingRectRight;
+			double BoundingRectBottom;
+			  
+			   public int compareTo(ParticleReport r)
+			{
+				return (int)(r.Area - this.Area);
+			}
+			
+			public int compare(ParticleReport r1, ParticleReport r2)
+			{
+				return (int)(r1.Area - r2.Area);
+			}
+		};
+		
+
+		//Structure to represent the scores for the various tests used for target identification
+		public class Scores {
+			double Area;
+			double Aspect;
+		};
+
+		Image m_binaryFrame;
+		int imaqError;
+	    boolean filteredDashboard;
+
 }
 
