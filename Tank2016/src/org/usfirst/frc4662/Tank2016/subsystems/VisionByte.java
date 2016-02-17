@@ -272,5 +272,11 @@ public class VisionByte extends Subsystem {
 		int imaqError;
 	    boolean filteredDashboard;
 
+		NIVision.Range TOTE_HUE_RANGE = new NIVision.Range(101, 64);	//Default hue range for yellow tote
+		NIVision.Range TOTE_SAT_RANGE = new NIVision.Range(88, 255);	//Default saturation range for yellow tote
+		NIVision.Range TOTE_VAL_RANGE = new NIVision.Range(134, 255);	//Default value range for yellow tote
+		double AREA_MINIMUM = 0.5; //Default Area minimum for particle as a percentage of total image area
+	    
+	    
 }
 
